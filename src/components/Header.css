@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nanum Gothic", sans-serif;
+}
+body {
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+#itemOrder {
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+#selectedItemImg {
+    width: 400px;
+    height: 400px;
+}
+
+img {
+    width: 190px;
+    height: 200px;
+}
+
+#itemView {
+    width: 60px;
+    height: 60px;
+}
+
+#itemMain {
+    float: left;
+}
+
+#selectedItem {
+    position: relative;
+}
+
+#order {
+    width: 60%;
+    float: right;
+}
+
+hr {
+    margin: 15px 0px;
+}
+
+td {
+    font-size: 14px;
+    text-align: left;
+    color: #555454;
+}
+
+#price {
+    position: relative;
+}
+
+#originalPrice {
+    position: relative;
+    font-size: 14px;
+    color: #555454;
+    margin-top: 7px;
+}
+
+#discountPrice {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555454;
+}
+
+#discountRate {
+    position: absolute;
+    top: 30px;
+    left: 495px;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+
+#selectColor>ul {
+    height: 12px;
+    line-height: 12px;
+}
+
+#selectColor>p {
+    font-size: 10px;
+}
+
+.set_color {
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    border-radius: 50%;
+    float: left;
+    margin: 0px 2px;
+}
+
+.set_color.c1 {
+    background-color: #000;
+}
+
+.set_color.c2 {
+    background-color: gray;
+}
+
+.set_color.c3 {
+    background-color: green;
+}
+
+#itemTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+#orderItem td {
+    width: 210px;
+}
+.colSum1 {
+    position: relative;
+    text-align: right;
+    vertical-align: middle;
+}
+
+#upBtn {
+    position: absolute;
+    width: 20px;
+    top: -3px;
+    right: 0px;
+}
+
+#downBtn {
+    position: absolute;
+    width: 20px;
+    top: 10px;
+    right: 0px;
+}
+
+.colSum1>ul>li {
+    position: absolute;
+    width: 30px;
+    top: 10px;
+    right: 18px;
+}
+
+#orderQty {
+    position: absolute;
+    float: left;
+    width: 30px;
+    top: 10px;
+    right: 42px;
+}
+
+#deleteBtn {
+    position: absolute;
+    top: 12px;
+    right: 2px;
+}
+
+.colSum2 {
+    text-align: right;
+    vertical-align: middle;
+}
+
+#sumOrder {
+    text-align: right;
+    font-size: 14px;
+    margin-right: 10px;
+    padding: 20px 0px;
+}
+
+#sumPricr {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#buyBtnGroup>li {
+    float: left;
+    width: 212px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 5%;
+}
+
+#buyBtn {
+    background-color: red;
+}
+
+#buyBtn>a {
+    background-color: red;
+    color: white;
+}
+
+#addBtn>a,
+#wishBtn>a {
+    color: black;
+}

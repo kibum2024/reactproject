@@ -1,0 +1,64 @@
+/* /* ImgScroll.css */
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 14px;
+}
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 1060px;
+    height: 260px;
+}
+.item-list {
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+    height: 260px;
+    left: 0px;
+}
+
+.item-list > li {
+    flex: 0 0 190px;
+    margin: 0px 10px;
+    transition: transform 1s ease;
+}
+
+.item-content img {
+    width: 190px;
+    height: 200px;
+}
+.item-comment {
+    width: 190px;
+    height: 15px;
+    font-size: 12px;
+    text-align: center;
+    color: #555454;
+    overflow: hidden;
+}
+.item-name {
+    font-weight: bold;
+    text-align: center;
+}
+.discount-price {
+    text-align: center;
+}
+.control-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 12px;
+}
+.control-item {
+    margin: 0px 2px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    background-color: rgb(234, 236, 230);
+}
+.active {
+    background-color: white;
+}
+
