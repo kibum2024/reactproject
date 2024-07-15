@@ -14,10 +14,14 @@ import image013 from './013.jpg';
 import image014 from './014.jpg';
 import image015 from './015.jpg';
 import image016 from './016.jpg';
-import countUp from './btn_count_up.gif'
-import countDown from './btn_count_down.gif'
+import countUp from './btn_count_up.gif';
+import countDown from './btn_count_down.gif';
+import bnnMain01 from './bnnMain01.jpg';
+import bnnMain02 from './bnnMain02.jpg';
+import bnnMain03 from './bnnMain03.jpg';
 
 export { image001, image002, image003, image004, image005, 
          image006, image007, image008, image009, image010, 
          image011, image012, image013, image014, image015,
-         image016, countUp, countDown };
+         image016, countUp, countDown, bnnMain01, bnnMain02,
+         bnnMain03 };

@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+/* App.css 또는 관련 CSS 파일 */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+.wrap {
+  position: relative;
+}
+li {
+  list-style: none;
+}
+.main-menu-link {
+  text-decoration: none; 
+  color: inherit; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-wrap {
+  position: fixed;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: nowrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 80px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
 }
-
-.App-link {
-  color: #61dafb;
+.header-logo {
+  width: 25%;
+  margin: 0px 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-weight: bold;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.main-menu-wrap {
+  width: 60%;
+  display: flex;
+}
+.main-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 80px;
+  line-height: 80px;
+  margin: 0px 20px;
+}
+.main-menu> li {
+  width: 120px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.my-menu-wrap {
+  width: 15%;
+}
+.my-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 80px;
+  line-height: 80px;
+  margin: 0;
+}
+.my-menu> li {
+  width: 20px;
+  margin: 0px 10px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.my-menu> li> i {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.container-wrap {
+  margin-top: 80px;
 }

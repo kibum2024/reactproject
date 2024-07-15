@@ -1,0 +1,30 @@
+/* DropdownMenu.css */
+
+.dropdown-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .dropdown-menu li {
+    width: 110px;
+    font-size: 13px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .menu-point {
+    width: 2px;
+    height: 2px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
