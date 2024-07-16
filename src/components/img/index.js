@@ -19,9 +19,11 @@ import countDown from './btn_count_down.gif';
 import bnnMain01 from './bnnMain01.jpg';
 import bnnMain02 from './bnnMain02.jpg';
 import bnnMain03 from './bnnMain03.jpg';
+import btnPagePrev from './btn_page_prev.gif';
+import btnPageNext from './btn_page_next.gif';
 
 export { image001, image002, image003, image004, image005, 
          image006, image007, image008, image009, image010, 
          image011, image012, image013, image014, image015,
          image016, countUp, countDown, bnnMain01, bnnMain02,
-         bnnMain03 };
+         bnnMain03, btnPagePrev, btnPageNext };
