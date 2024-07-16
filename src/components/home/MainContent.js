@@ -3,7 +3,7 @@ import AdvertisingSlide from "./AdvertisingSlide";
 
 const MainContent = () => {
     return (
-        <div>
+        <div className="main-content">
             <AdvertisingSlide />
         </div>
     )

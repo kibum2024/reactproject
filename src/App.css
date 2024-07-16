@@ -1,7 +1,8 @@
 /* App.css 또는 관련 CSS 파일 */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 .wrap {
   position: relative;
+  width: 100%; /* 부모 요소의 너비를 100%로 설정 */
+  box-sizing: border-box; /* padding과 border를 포함한 너비를 설정 */
 }
 li {
   list-style: none;
@@ -16,11 +17,14 @@ li {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  height: 80px;
+  height: 100px;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 30;
+  z-index: 100;
+  width: 100%; /* 자식 요소의 너비를 100%로 설정 */
+  box-sizing: border-box; /* padding과 border를 포함한 너비를 설정 */
+  background-color: white;
 }
 .header-logo {
   width: 25%;
@@ -34,19 +38,20 @@ h1 {
 .main-menu-wrap {
   width: 60%;
   display: flex;
+  z-index: 10;
 }
 .main-menu {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  height: 80px;
-  line-height: 80px;
+  height: 100px;
+  line-height: 100px;
   margin: 0px 20px;
 }
 .main-menu> li {
   width: 120px;
-  height: 80px;
-  line-height: 80px;
+  height: 100px;
+  line-height: 100px;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -61,15 +66,15 @@ h1 {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  height: 80px;
-  line-height: 80px;
+  height: 100px;
+  line-height: 100px;
   margin: 0;
 }
 .my-menu> li {
-  width: 20px;
+  width: 25px;
   margin: 0px 10px;
-  height: 80px;
-  line-height: 80px;
+  height: 100px;
+  line-height: 100px;
   font-size: 16px;
   cursor: pointer;
 }
@@ -78,5 +83,10 @@ h1 {
   font-size: 1.5rem;
 }
 .container-wrap {
-  margin-top: 80px;
+  width: 100%;
+  margin-top: 100px;
+}
+.footer-wrap {
+  width: 100%;
+  margin-top: 100px;
 }
