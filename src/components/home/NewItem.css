@@ -1,0 +1,82 @@
+.new-item-wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+.new-item-header {
+    height: 200px;
+}
+.new-item-header> h1 {
+    text-align: center;
+    margin: 10px;
+}
+.new-item-header> p {
+    font-size: 16px;
+    color: #aaa;
+    text-align: center;
+}
+
+.new-item-grid {
+    display: grid;
+    width: 1500px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+}
+.new-item {
+    position: relative;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0;
+}        
+
+.new-item img {
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+}
+.shopping-cart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    bottom: 120px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+.shopping-cart i {
+    font-size: 1.5rem;
+}    
+.new-item-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+    padding: 0px;
+}
+.new-item-comment{
+    font-size: 14px;
+    color: #aaa;
+    margin: 3px 0px;
+    padding: 0px;
+}
+.new-item-originalPrice {
+    font-size: 14px;
+    color: #aaa;
+    margin: 3px 0px;
+    padding: 0px;
+}
+.new-item-discountPrice {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+.new-item-discountRate {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}

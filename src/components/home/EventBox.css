@@ -1,0 +1,38 @@
+.event-box-wrap {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 150px;
+}
+.event-box-header> h1 {
+    text-align: center;
+    margin: 10px;
+}
+.event-box-header> p {
+    font-size: 16px;
+    color: #aaa;
+    text-align: center;
+}
+.event-box-img {
+    display: flex;
+    justify-content: center;
+}
+.event-box-img> li {
+    cursor: pointer;
+}
+.event-box-img> li> p {
+    text-align: center;
+}
+.event-box-img img {
+    width: 500px;
+    height: 250px;
+    margin: 50px 10px 10px 10px;
+    border-radius: 10px;
+}
+.event-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.event-comment {
+    color: #aaa;
+}

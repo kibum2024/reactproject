@@ -21,9 +21,14 @@ import bnnMain02 from './bnnMain02.jpg';
 import bnnMain03 from './bnnMain03.jpg';
 import btnPagePrev from './btn_page_prev.gif';
 import btnPageNext from './btn_page_next.gif';
+import bnnSub01 from './bnnSub01.jpg';
+import bnnSub02 from './bnnSub02.jpg';
+import bnnSub03 from './bnnSub03.jpg';
+import btnClose from './btn_close.gif';
 
 export { image001, image002, image003, image004, image005, 
          image006, image007, image008, image009, image010, 
          image011, image012, image013, image014, image015,
          image016, countUp, countDown, bnnMain01, bnnMain02,
-         bnnMain03, btnPagePrev, btnPageNext };
+         bnnMain03, btnPagePrev, btnPageNext, bnnSub01, bnnSub02,
+         bnnSub03, btnClose};

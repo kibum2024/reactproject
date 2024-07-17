@@ -1,0 +1,17 @@
+.shopping-cart-wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+.shopping-cart-modal {
+    width: 400px;
+}
+.shopping-window-top {
+    height: 40px;
+}
+.shopping-window-top img {
+
+}
+.shopping-cart-modal img {
+    width: 80px;
+    height: 80px;
+}
