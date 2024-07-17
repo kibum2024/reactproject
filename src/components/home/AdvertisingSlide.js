@@ -48,24 +48,26 @@ const AdvertisingSlide = () => {
                 </div>
             )}
             <ul className="slide-img">
-                {images.map((image, index) => (
-                    <li key={index} className={`slide-item ${index === currentImageIndex ? 'active' : ''}`}>
-                        <img
-                            src={image}
-                            alt={`Slide ${index}`}
-                            className={`slide-image ${index === currentImageIndex ? 'img-view' : ''}`}
-                        />
-                        <div className="txt-box">
-                            <div className="inner g-sans">
-                                <p className="tit1"> { bnnData[index].itemTitle1 } </p>
-                                <p className="tit2"> { bnnData[index].itemTitle2 } </p>
-                                <p className="txt1"> { bnnData[index].itemEvent1 } </p>
-                                <p className="txt2"> { bnnData[index].itemEvent2 } </p>
-                                <span className="btn-link">SHOP NOW<i className="bi bi-chevron-right"></i></span>
+                {images.map((image, index) => {
+                    return (
+                        <li key={index} className={`slide-item ${index === currentImageIndex ? 'active' : ''}`}>
+                            <img
+                                src={image}
+                                alt={`Slide ${index}`}
+                                className={`slide-image ${index === currentImageIndex ? 'img-view' : ''}`}
+                            />
+                            <div className="txt-box">
+                                <div className="inner g-sans">
+                                    <p className="tit1"> { bnnData[index].itemTitle1 } </p>
+                                    <p className="tit2"> { bnnData[index].itemTitle2 } </p>
+                                    <p className="txt1"> { bnnData[index].itemEvent1 } </p>
+                                    <p className="txt2"> { bnnData[index].itemEvent2 } </p>
+                                    <span className="btn-link">SHOP NOW<i className="bi bi-chevron-right"></i></span>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                ))}
+                        </li>
+                    );
+                })}
             </ul>
             {isHovered && (
                 <div className="page-btn page-right-btn visible" onClick={handleNext}>

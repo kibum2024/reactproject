@@ -17,7 +17,7 @@ const EventBox = () => {
             <div className="event-box-img-wrap">
                 <ul className="event-box-img">
                     {images.map((item, index) => (
-                        <li>
+                        <li key={index}>
                             <img src={item.img} alt={`Slide ${index}`} />
                             <p className="event-name"> {item.eventName } </p>
                             <p className="event-comment"> {item.eventComment } </p>

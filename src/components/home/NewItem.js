@@ -16,8 +16,8 @@ const NewItem = () => {
                 <p>새롭게 입고된 제품들을 소개합니다.</p>
             </div>
             <div className='new-item-grid'>
-                {newItemData.map((item) => (
-                    <div className='new-item'>
+                {newItemData.map((item, index) => (
+                    <div key={index} className='new-item'>
                         <img src={img[`image${item.itemImg.substring(0,3)}`]} alt="" />
                         <p className='new-item-name'> {item.itemName} </p>
                         <p className='new-item-comment'> {item.itemComment} </p>

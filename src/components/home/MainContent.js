@@ -3,6 +3,8 @@ import AdvertisingSlide from "./AdvertisingSlide";
 import EventBox from "./EventBox";
 import NewItem from "./NewItem";
 import ShoppingCart from "./ShoppingCart";
+import VideoDisplay from "./VideoDisplay";
+import ReviewDisplay from "./ReviewDisplay";
 
 const MainContent = () => {
     return (
@@ -10,8 +12,9 @@ const MainContent = () => {
             {/* <AdvertisingSlide></AdvertisingSlide>
             <EventBox></EventBox> */}
             {/* <NewItem></NewItem> */}
-            <ShoppingCart></ShoppingCart>
-
+            {/* <ShoppingCart></ShoppingCart> */}
+            {/* <VideoDisplay></VideoDisplay>                 */}
+            <ReviewDisplay></ReviewDisplay>
         </div>
     )
 }
