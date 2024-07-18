@@ -26,7 +26,7 @@ export const bnnData  = [
 export const reviewData = [
     { itemNo: 1, reviewTitle: "제 입맛에는 안맞아요 ㅜㅜ", reviewContent: "후르츠링이 달아서 그런지 제 입맛에는 안 맞네요 단거 좋아하는 분들은 좋아할거 같네요..", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:50:41", reviewRating:"5", reviewSearch: 6},
     { itemNo: 3, reviewTitle: "출근전에 먹기 좋아요", reviewContent: "오트밀이라 포만감 있어서 바쁜 아침에 먹기 좋아요 ", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:51:15", reviewRating:"3", reviewSearch: 102},
-    { itemNo: 7, reviewTitle: "아이들 간식으로 좋아요 !", reviewContent: "맛있다고 잘먹네요 ㅎㅎ", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:50:09", reviewRating:"5", reviewSearch: 76},
-    { itemNo: 9, reviewTitle: "너무 맛있어요", reviewContent: "달달하니 맛있어요", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:49:38", reviewRating:"5", reviewSearch: 19},
-    { itemNo: 12, reviewTitle: "많아서 좋아요", reviewContent: "대용량 찾다가 발견해서 시켰는데 가격 대비 맛있고 좋아요 !", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:49:01", reviewRating:"5", reviewSearch: 123}
+    { itemNo: 7, reviewTitle: "아이들 간식으로 좋아요 !", reviewContent: "맛있다고 잘먹네요 ㅎㅎ", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:50:09", reviewRating:"2", reviewSearch: 76},
+    { itemNo: 9, reviewTitle: "너무 맛있어요", reviewContent: "달달하니 맛있어요", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:49:38", reviewRating:"4", reviewSearch: 19},
+    { itemNo: 12, reviewTitle: "많아서 좋아요", reviewContent: "대용량 찾다가 발견해서 시켰는데 가격 대비 맛있고 좋아요 !", reviewer: "AWESOMED", reviewDate: "2024-06-17 10:49:01", reviewRating:"1", reviewSearch: 123}
 ];

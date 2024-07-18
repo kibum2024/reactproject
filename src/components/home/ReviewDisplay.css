@@ -1,3 +1,115 @@
 .review-display-wrap {
     width: 100%;
 }
+.review-display-header {
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+}
+.review-display-header> h1 {
+    height: 30px;
+}
+.review-display-header> p {
+    color: #aaa;
+}
+.review-display-item {
+    position: relative;
+    width: 1470px;
+    height: 572px;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.review-display-ul {
+    position: absolute;
+    width: auto;
+    height: 572px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+.review-item {
+    width: 350px;
+    height: 570px;
+    border: 1px solid #e7e5e5;
+    border-radius: 20px;
+}
+.review-img {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 20px 20px 0px 0px;
+}
+.review-img> img {
+    width: 350px;
+    height: 350px;
+    border-radius: 20px 20px 0px 0px;
+    transition: transform 0.3s;
+}
+.review-img> img:hover {
+    transform: scale(1.1);
+}
+.review-item> div> div> img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+.review-rating {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+    height: 50px;
+}
+.review-rating p {
+    margin: 0px 10px;
+}
+.review-title {
+    font-weight: bold;
+}
+.review-comment {
+    font-size: 12px;
+    margin: 10px 10px;
+    color: #aaa;
+}
+.reviewer {
+    font-size: 12px;
+    margin: 0px 10px;
+    padding-right: 10px;
+    color: #aaa;
+    border-right: 1px solid #aaa;
+}
+.review-date {
+    font-size: 12px;
+    margin: 10px 10px;
+    color: #aaa;
+}
+.review-rating-wrap {
+    border-top: 1px solid #e7e5e5;
+    border-bottom: 1px solid #e7e5e5;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.x-scrollBar-wrap {
+    position: relative;
+    width: 1470px;
+    height: 70px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.x-scrollBar {
+    position: absolute;
+    width: 1470px;
+    height: 60px;
+    border-bottom: 2px solid #aaa;
+    /* cursor: pointer; */
+}
+.x-scrollBar-active {
+    position: absolute;
+    width: 1470px;
+    height: 60px;
+    border-bottom: 2px solid red;
+    /* cursor: pointer; */
+}

@@ -10,10 +10,10 @@ const MainContent = () => {
     return (
         <div className="main-content">
             {/* <AdvertisingSlide></AdvertisingSlide>
-            <EventBox></EventBox> */}
-            {/* <NewItem></NewItem> */}
-            {/* <ShoppingCart></ShoppingCart> */}
-            {/* <VideoDisplay></VideoDisplay>                 */}
+            <EventBox></EventBox>
+            <NewItem></NewItem>
+            <ShoppingCart></ShoppingCart>
+            <VideoDisplay></VideoDisplay>                 */}
             <ReviewDisplay></ReviewDisplay>
         </div>
     )
