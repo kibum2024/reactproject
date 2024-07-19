@@ -6,7 +6,7 @@ const VideoDisplay = () => {
         <div className='video-display-wrap'>
             <div className='video-display'>
                 <div className='video-view'>
-                    <iframe src="https://www.youtube.com/embed/IjTOkhMbXMI?loop=1&amp;amp;vq=hd1080&amp;amp;controls=0&amp;amp;showinfo=0&amp;amp;rel=0&amp;amp;autoplay=1&amp;amp;loop=1&amp;amp;playlist=IjTOkhMbXMI&amp;amp;mute=1&amp;amp;enablejsapi=1" frameborder="0"></iframe>
+                    <iframe src="https://www.youtube.com/embed/IjTOkhMbXMI?loop=1&amp;amp;vq=hd1080&amp;amp;controls=0&amp;amp;showinfo=0&amp;amp;rel=0&amp;amp;autoplay=1&amp;amp;loop=1&amp;amp;playlist=IjTOkhMbXMI&amp;amp;mute=1&amp;amp;enablejsapi=1" frameborder="0" title="Example Website"></iframe>
                 </div>
                 <div className='video-comment'>
                     <p className='video-p1'>#편의점 #GS25 #한정콜라보</p>

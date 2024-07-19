@@ -1,14 +1,18 @@
 import React, { useState, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom';
+import { Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom';
 import './App.css';
 import { submenuData } from './components/data/submenuData';
 import DropdownMenu from './components/DropdownMenu';
 import MainContent  from './components/home/MainContent';
 import BrandStory  from './components/brandstory/BrandStory';
+import Story  from './components/brandstory/Story';
+import Contact  from './components/brandstory/Contact';
 import ItemIntroduce  from './components/item/ItemIntroduce';
 import Shopping  from './components/shopping/Shopping';
 import NewItem from './components/shopping/NewItem';
 import BestItem from './components/shopping/BestItem';
+import FooterDisplay from "./components/FooterDisplay";
+import TopDownBtn from './components/TopDownBtn';
 
 
 function App() {
@@ -92,12 +96,16 @@ function App() {
             onMouseLeave={handleDropdownMouseLeave}
           />
         )}
+        <TopDownBtn></TopDownBtn>
       </div>
       <div className='container-wrap'>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} ></Route>
           <Route path="/home" element={<MainContent />} ></Route> 
-          <Route path="/brandstory" element={<BrandStory />} ></Route>
+          <Route path="/brandstory" element={<BrandStory />} >
+            <Route path="story" element={<Story />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
           <Route path="/item" element={<ItemIntroduce />} ></Route>
           <Route path="/shopping" element={<Shopping />}>
             <Route path="NewItem" element={<NewItem />} ></Route>
@@ -106,7 +114,7 @@ function App() {
         </Routes>
       </div>
       <div className='footer-wrap'>
-
+        <FooterDisplay></FooterDisplay>
       </div>
     </div>
   );

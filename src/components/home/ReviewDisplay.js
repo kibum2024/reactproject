@@ -26,7 +26,7 @@ const ReviewDisplay = () => {
         }, 800);
 
         return () => clearInterval(intervalId);
-    }, [reviewData.length, currentIndex]);
+    }, [currentIndex]);
 
     useEffect(() => {
         if (ulRef.current) {
@@ -49,7 +49,7 @@ const ReviewDisplay = () => {
             const deltaX = e.clientX - xScrollRef.current.getBoundingClientRect().left;
             xScrollRef.current.style.transform = `translate3d(${deltaX}px, 0px, 0px)`;
             setLeftPosition(deltaX);
-            console.log('isMouseDown X Position:', isMouseDown);
+            // console.log('isMouseDown X Position:', isMouseDown);
             // console.log('Mouse X clientX:', e.clientX);
         }
     };

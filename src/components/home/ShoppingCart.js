@@ -1,6 +1,5 @@
 import React from 'react';
 import * as img from 'src/components/img/index';
-import { itemData } from "src/components/data/itemData";
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {

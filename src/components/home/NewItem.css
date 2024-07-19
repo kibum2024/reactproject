@@ -4,6 +4,7 @@
 }
 .new-item-header {
     height: 200px;
+    margin-top: 50px;
 }
 .new-item-header> h1 {
     text-align: center;
@@ -17,7 +18,7 @@
 
 .new-item-grid {
     display: grid;
-    width: 1500px;
+    width: 1460px;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 0 auto;
