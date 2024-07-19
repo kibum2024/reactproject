@@ -24,7 +24,7 @@ connection.connect((err) => {
 
 app.get('/', (req, res) => {
   // MySQL 쿼리 실행 예시
-  connection.query('SELECT * FROM your_table', (error, results, fields) => {
+  connection.query('SELECT * FROM ITEMDATA', (error, results, fields) => {
     if (error) throw error;
     res.send(results);
   });
