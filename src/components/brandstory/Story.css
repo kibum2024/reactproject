@@ -1,0 +1,19 @@
+.story-wrap {
+    width: 100%;
+}
+.story-img {
+    width: 1452px;
+    height: 592px;
+    margin: 0 auto;
+}
+.text-tit {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 80px 0px 30px 0px;
+}
+.text-box {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}

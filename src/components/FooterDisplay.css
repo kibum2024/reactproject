@@ -1,0 +1,86 @@
+.footer-display-wrap {
+    width: 100%;
+}
+.footer-display {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 1460px;
+    margin: 0 auto;
+}
+.footer-display-left {
+    /* margin: 150px; */
+}
+.footer-tel-info> h2 {
+    margin: 0px 0px 15px 0px;
+}
+.footer-tel-info> p {
+    margin: 5px;
+    color: #aaa;
+}
+.footer-company-info {
+    margin-top: 50px;
+}
+.footer-company-info> p {
+    margin: 5px;
+    color: #aaa;
+}    
+.footer-main-menu {
+    display: flex;
+}
+.footer-main-menu> li {
+    width: 150px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.footer-main-menu> li:nth-child(4) {
+    color: red;
+}
+.footer-sub {
+    position: relative;
+    width: 420px;
+    height: 220px;
+    margin-left: 200px;
+}
+.footer-sub-menu1 {
+    position: absolute;
+    right: 180px;
+}
+.footer-sub-menu1> li {
+    margin: 5px 0px;
+    color: #aaa;
+} 
+.footer-sub-menu2 {
+    position: absolute;
+    right: 0px;
+}
+.footer-sub-menu2> li {
+    text-align: right;
+    margin: 5px 0px;
+    color: #aaa;
+}
+.footer-link-menu {
+    display: flex;
+    justify-content: right;
+}
+.footer-link-menu> li {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0px 5px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+}
+.footer-link-menu> li:hover {
+    border: 1px solid rgb(27, 27, 27);
+}
+.footer-link-menu> li> a {
+    color: #aaa;
+}
+.copyright {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+}
