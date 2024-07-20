@@ -30,6 +30,7 @@ import icoPoint2 from './ico_point2.gif';
 import icoPoint3 from './ico_point3.gif';
 import icoPoint4 from './ico_point4.gif';
 import icoPoint5 from './ico_point5.gif';
+import btnPriceDelete from './btn_price_delete.gif';
 
 export { image001, image002, image003, image004, image005, 
          image006, image007, image008, image009, image010, 
@@ -37,4 +38,4 @@ export { image001, image002, image003, image004, image005,
          image016, countUp, countDown, bnnMain01, bnnMain02,
          bnnMain03, btnPagePrev, btnPageNext, bnnSub01, bnnSub02,
          bnnSub03, btnClose, icoPoint1, icoPoint2, icoPoint3, 
-         icoPoint4, icoPoint5};
+         icoPoint4, icoPoint5, btnPriceDelete};

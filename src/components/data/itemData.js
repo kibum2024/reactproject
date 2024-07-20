@@ -17,6 +17,23 @@ export const itemData = [
     { itemNo: 16, itemKind: "1", newKind: "1", itemImg: "016.jpg", itemName: "요거트 쉐이크 180g", itemComment: "담백한 오리지널 요거트", originalPrice: 8000, discountPrice: 5000, discountRate: "38%" }
 ];
 
+export const itemInColor = [
+    { itemNo: 1, itemColor: "white", itemColorName: "화이트"},
+    { itemNo: 1, itemColor: "black", itemColorName: "블랙"},
+    { itemNo: 1, itemColor: "red", itemColorName: "레드"},
+    { itemNo: 2, itemColor: "white", itemColorName: "화이트"},
+    { itemNo: 2, itemColor: "yellow", itemColorName: "엘로우"},
+    { itemNo: 2, itemColor: "red", itemColorName: "레드"},
+    { itemNo: 4, itemColor: "red", itemColorName: "레드"},
+    { itemNo: 4, itemColor: "yellow", itemColorName: "엘로우"}
+];
+
+export const itemInSize = [
+    { itemNo: 1, itemSize: "스몰"},
+    { itemNo: 1, itemSize: "라지"},
+    { itemNo: 1, itemSize: "빅라지"},
+];
+
 export const bnnData  = [
     { itemNo: 1, itemTitle1: "오스윗이 선사하는", itemTitle2: "간단한 아침솔루션", itemEvent1: "아침 식사 굶지말고 챙기세요.", itemEvent2: "지금 구매시 본품 1개 더 증정!"},
     { itemNo: 2, itemTitle1: "오스윗과 젤라또의", itemTitle2: "달콤시원한 만남", itemEvent1: "신제품 오스윗 셰프젤라또 구매시", itemEvent2: "적립금 3,000원 추가 증정"},
