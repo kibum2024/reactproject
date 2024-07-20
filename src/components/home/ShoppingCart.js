@@ -16,7 +16,7 @@ const ShoppingCart = ({imgProp, itemNoProp}) => {
         setColorSelected(false);
         setIsColor(setColor);
         if (newItemInSize.length === 0) {
-            const item = { itemNO: itemNoProp, itemColor: isColor, itemSize: "", itemCount: 1, itemAmt: newItemData[0].discountPrice};
+            const item = { itemNO: itemNoProp, itemColor: setColor, itemSize: "", itemCount: 1, itemAmt: newItemData[0].discountPrice};
     
             const isDuplicate = selectedItems.some(
               selectedItem => selectedItem.itemColor === item.itemColor
@@ -137,7 +137,7 @@ const ShoppingCart = ({imgProp, itemNoProp}) => {
                         <div key={index} className='shopping-cart-selected-item'>
                             <div className='shopping-cart-selected-namecolor'>
                                 <div className='shopping-cart-selected-name'>{newItemData[0].itemName}</div>
-                                <div className='shopping-cart-selected-color'>{`- ${item.itemColor}/${item.itemSize}`}</div>
+                                <div className='shopping-cart-selected-color'>{newItemInSize.length > 0 ? `- ${item.itemColor}/${item.itemSize}` : `- ${item.itemColor}`}</div>
                             </div>
                             <div className='shopping-cart-selected-count'>
                                 <input 

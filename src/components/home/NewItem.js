@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import * as img from 'src/components/img/index';
-import { itemData } from "src/components/data/itemData";
+import { itemData, itemInColor} from "src/components/data/itemData";
 import './NewItem.css';
 import ShoppingCart from './ShoppingCart';
 
@@ -15,10 +15,14 @@ const NewItem = () => {
 
     const newItemData = itemData.filter(item => item.newKind === "1");
 
+
     const shoppingCartClick = (itemImg, itemNo) => {
         setSelectedImage(itemImg);
         setSelectedNo(itemNo);
-        setModalIsOpen(true);
+        const newItemInColor = itemInColor.filter(itemColor => itemColor.itemNo === itemNo);
+        if (newItemInColor.length > 0) {
+            setModalIsOpen(true);
+        }
     };
 
     const closeModal = () => {
