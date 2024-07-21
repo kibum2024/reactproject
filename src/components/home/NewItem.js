@@ -1,20 +1,34 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import * as img from 'src/components/img/index';
-import { itemData, itemInColor} from "src/components/data/itemData";
+import { itemData, itemInColor, bestItem } from "src/components/data/itemData";
 import './NewItem.css';
 import ShoppingCart from './ShoppingCart';
 
 Modal.setAppElement('#root');
 
 
-const NewItem = () => {
+const NewItem = ({callMenuProg}) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedNo, setSelectedNo] = useState(null);
 
     const newItemData = itemData.filter(item => item.newKind === "1");
+    const [itemsSort, setItemsSort] = useState(newItemData);
 
+    const newBestItem = bestItem.flatMap(bestItem => {
+        return itemData.filter(item => item.itemNo === bestItem.itemNo).map(item => ({...item, ranking: bestItem.ranking}));
+    });
+
+    const highPricSort = () => {
+        newItemData.sort((a, b) => b.discountPrice - a.discountPrice);
+        setItemsSort([...newItemData]);
+    };
+
+    const lowPricSort = () => {
+        newItemData.sort((a, b) => a.discountPrice - b.discountPrice);
+        setItemsSort([...newItemData]);
+    };
 
     const shoppingCartClick = (itemImg, itemNo) => {
         setSelectedImage(itemImg);
@@ -34,11 +48,50 @@ const NewItem = () => {
     return (
         <div className='new-item-wrap'>
             <div className="new-item-header">
-                <h1>NEW! 신상품</h1>
-                <p>새롭게 입고된 제품들을 소개합니다.</p>
+                { callMenuProg === 'main' ? 
+                    <>
+                        <div className='new-item-subHeader1'>
+                            <h1>NEW! 신상품</h1>
+                            <p className='new-item-subHeader-p'>새롭게 입고된 제품들을 소개합니다.</p>
+                        </div>
+                    </>
+                    :
+                    <>
+                        <div className='best-item-grid'>
+                            {newBestItem.map((item, index) => (
+                                <div key={index} className='best-item'>
+                                    <div className='best-item-img'>
+                                        <img src={img[`image${item.itemImg.substring(0,3)}`]} alt="" />
+                                        <div className='best-item-info'>
+                                            <p className='best-item-ranking'> {"BEST"+item.ranking} </p>
+                                            <p className='best-item-discountRate'> {item.discountRate} </p>
+                                            <p className='best-item-name'> {item.itemName} </p>
+                                            <p className='best-item-comment'> {item.itemComment} </p>
+                                            <p className='best-item-originalPrice'><del>{item.originalPrice.toLocaleString()}</del>원</p>
+                                            <p className='best-item-discountPrice'> {item.discountPrice.toLocaleString()}원</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className='new-item-sort'>
+                            <div className='new-item-count'>
+                                TOTAL 16 ITEMS
+                            </div>
+                            <ul className='new-item-sort-ul'>
+                                <li>신상품</li>
+                                <li>상품명</li>
+                                <li onClick={lowPricSort}>낮은가격</li>
+                                <li onClick={highPricSort}>높은가격</li>
+                                <li>제조사</li>
+                                <li>사용후기</li>
+                            </ul>
+                        </div>
+                    </> 
+                }
             </div>
             <div className='new-item-grid'>
-                {newItemData.map((item, index) => (
+                {itemsSort.map((item, index) => (
                     <div key={index} className='new-item'>
                         <img src={img[`image${item.itemImg.substring(0,3)}`]} alt="" />
                         <p className='new-item-name'> {item.itemName} </p>

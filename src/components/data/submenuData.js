@@ -1,11 +1,11 @@
 // submenuData.js
 export const submenuData = {
     submenu1: [
-        { menuName: "신상품", menuLink: "/shopping/NewItem" },
+        { menuName: "신상품", menuLink: "/shopping/ShoppingNewItem" },
         { menuName: "베스트", menuLink: "/shopping/BestItem" },
-        { menuName: "요거트", menuLink: "/link/aaa" },
-        { menuName: "시리얼", menuLink: "/link/aaa" },
-        { menuName: "시리얼&요거트", menuLink: "/link/aaa"},
+        { menuName: "요거트", menuLink: "/shopping/YogurtItem" },
+        { menuName: "시리얼", menuLink: "/shopping/CerealItem" },
+        { menuName: "시리얼&요거트", menuLink: "/shopping/YogurtCerealItem"},
     ],
     submenu2: [
         { menuName: "공지사항", menuLink: "./link/aaa" },

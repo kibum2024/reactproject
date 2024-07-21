@@ -10,7 +10,7 @@ const MainContent = () => {
         <div className="main-content">
             <AdvertisingSlide></AdvertisingSlide>
             <EventBox></EventBox>
-            <NewItem></NewItem>
+            <NewItem  callMenuProg = "main"></NewItem>
             <VideoDisplay></VideoDisplay>                
             <ReviewDisplay></ReviewDisplay>
         </div>

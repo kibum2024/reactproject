@@ -9,8 +9,11 @@ import Story  from './components/brandstory/Story';
 import Contact  from './components/brandstory/Contact';
 import ItemIntroduce  from './components/item/ItemIntroduce';
 import Shopping  from './components/shopping/Shopping';
-import NewItem from './components/shopping/NewItem';
+import ShoppingNewItem from 'src/components/shopping/ShoppingNewItem';
 import BestItem from './components/shopping/BestItem';
+import YogurtItem from './components/shopping/YogurtItem';
+import CerealItem from './components/shopping/CerealItem';
+import YogurtCerealItem from './components/shopping/YogurtCerealItem';
 import FooterDisplay from "./components/FooterDisplay";
 import TopDownBtn from './components/TopDownBtn';
 
@@ -62,14 +65,14 @@ function App() {
             <li
               onMouseEnter={(e) => menuMouseEnter(submenu1, e)}
               onMouseLeave={menuMouseLeave}
-            ><Link to="/shopping" className='main-menu-link'>쇼핑하기</Link>
+            >쇼핑하기
             </li>
             <li
               onMouseEnter={(e) => menuMouseEnter(submenu2, e)}
               onMouseLeave={menuMouseLeave}
             >
               커뮤니티</li>
-            <li>문의하기</li>
+            <li><Link to="/qna" className='main-menu-link'>문의하기</Link></li>
           </ul>
         </div>
         <div className="my-menu-wrap">
@@ -102,14 +105,21 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} ></Route>
           <Route path="/home" element={<MainContent />} ></Route> 
-          <Route path="/brandstory" element={<BrandStory />} >
+          <Route path="/brandstory" element={<BrandStory stateProp ={true}/>} >
             <Route path="story" element={<Story />} />
             <Route path="contact" element={<Contact />} />
           </Route>
           <Route path="/item" element={<ItemIntroduce />} ></Route>
           <Route path="/shopping" element={<Shopping />}>
-            <Route path="NewItem" element={<NewItem />} ></Route>
+            <Route path="ShoppingNewItem" element={<ShoppingNewItem />} ></Route>
             <Route path="BestItem" element={<BestItem />} ></Route>
+            <Route path="YogurtItem" element={<YogurtItem />} ></Route>
+            <Route path="CerealItem" element={<CerealItem />} ></Route>
+            <Route path="YogurtCerealItem" element={<YogurtCerealItem />} ></Route>
+          </Route>
+          <Route path="/qna" element={<BrandStory stateProp ={false}/>} >
+            <Route path="story" element={<Story />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
       </div>

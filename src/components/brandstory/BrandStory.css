@@ -19,8 +19,10 @@
     border-radius: 5px;
     border: 1px solid #aaa;
     margin-left: 10px;
+    color: black;
+    background-color: white;
 }
-.brand-story-ul> li:nth-child(1) {
+.brand-story-ul> .on {
     color: white;
     background-color: black;
 }

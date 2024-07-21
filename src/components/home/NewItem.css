@@ -3,21 +3,84 @@
     margin: 0 auto;
 }
 .new-item-header {
-    height: 200px;
+    width: 1460px;
+    height: auto;
+    margin: 60px auto;
 }
-.new-item-header> h1 {
+.new-item-subHeader1 {
+    height: 80px;
+    line-height: 80px;
     text-align: center;
-    margin: 10px;
+    margin: 0 auto;
 }
-.new-item-header> p {
+.new-item-subHeader1 h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.new-item-subHeader2 {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+.new-item-subHeader2 h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.new-item-subHeader-p {
     font-size: 16px;
+    height: 20px;
+    line-height: 20px;
     color: #aaa;
     text-align: center;
+    margin:  0;
+    padding: 0;
 }
-
+.new-item-sort {
+    position: relative;
+    width: 1460px;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+    overflow: hidden;
+}
+.new-item-count {
+    width: 960px;
+    margin: 0;
+    padding: 0;
+}
+.new-item-sort-ul {
+    position: absolute;
+    right: -1px;
+    width: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 10px;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.new-item-sort-ul> li {
+    color: #aaa;
+    font-size: 13px;
+    padding-right: 10px;
+    height: 18px;
+    line-height: 18px;
+    border-right: 1px solid #aaa;
+    cursor: pointer;
+}
+.new-item-count {
+    color: #aaa;
+}
 .new-item-grid {
     display: grid;
-    width: 1500px;
+    width: 1460px;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 0 auto;
@@ -80,3 +143,87 @@
     margin: 0px;
     padding: 0px;
 }
+.best-item-grid {
+    display: grid;
+    width: 1460px;
+    height: 400px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+}
+.best-item {
+    position: relative;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0;
+}        
+
+.best-item img {
+    width: 350px;   
+    height: 350px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden; /* 자식 요소가 부모 영역을 벗어나지 않도록 설정 */
+    cursor: pointer;
+}
+.best-item-info {
+    opacity: 0; /* 기본적으로 숨기기 */
+    transition: opacity 0.3s ease; /* 호버 시 부드럽게 나타나도록 설정 */
+    position: absolute; /* 위치를 절대적으로 설정 */
+    width: 330px;   
+    height: 330px;
+    border-radius: 20px;
+    top: 0; /* 상단에 배치 */
+    left: 0; /* 좌측에 배치 */
+    right: 0; /* 우측에 배치 */
+    bottom: 0; /* 하단에 배치 */
+    background: #171616; /* 배경색 추가 (선택 사항) */
+    padding: 10px; /* 내용 여백 */
+    display: flex; /* 내용을 정렬하기 위해 플렉스 사용 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: center; /* 세로 가운데 정렬 */
+    cursor: pointer;
+  }
+    
+  /* 마우스 호버 시 효과 */
+  .best-item-img:hover> .best-item-info {
+    opacity: 0.6; /* 호버 시 보이도록 설정 */
+  }
+  .best-item-name, .best-item-comment, .best-item-originalPrice, .best-item-discountPrice {
+    color: white;
+    margin: 10px 0px;
+  }
+  .best-item-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .best-item-discountPrice {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .best-item-ranking {
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    left: 0px;
+    top: -17px;
+    background-color: white;
+    color: black;
+  }
+  .best-item-discountRate {
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    right: 0px;
+    top: -18px;
+    background-color: red;
+    color: white;
+    border-radius: 0px 20px 0px 0px;
+  }

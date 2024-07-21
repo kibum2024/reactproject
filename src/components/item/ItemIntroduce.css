@@ -1,0 +1,13 @@
+.item-introduce-wrap {
+    width: 100%;
+}
+.item-introduce-wrap h1 {
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+.item-introduce-img {
+    width: 1452px;
+    height: 592px;
+    margin: 0 auto;
+}
