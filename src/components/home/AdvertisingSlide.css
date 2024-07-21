@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
-    width: 95%;
+    width: 1460px;
     height: 100%;
     margin: 0 auto;
     padding: 0;
@@ -50,10 +50,10 @@
     z-index: 200;
 }
 .page-left-btn {
-    left: 5%;
+    left: 15%;
 }
 .page-right-btn {
-    right: 5%;
+    right: 15%;
 }
 .page-left-btn:hover,
 .page-right-btn:hover {
@@ -74,7 +74,7 @@
     position: absolute;
     width: 400px;
     height: 260px;
-    right: 250px;
+    right: 150px;
     top: 200px;
     margin: 0;
     padding: 0;
@@ -115,15 +115,22 @@
     font-weight: bold;
     text-align: center;
     background-color: red;
-    border: 2px solid white;
     border-radius: 20px;
     color: white;
 }
+.btn-link:hover {
+    background-color: rgba(0, 0, 0, 0.0);
+    border: 2px solid red;
+    color: red;
+}    
 .btn-link i {
     font-size: 1rem;
     color: white;
     font-weight: bold;
     margin-left: 5px;
+}
+.btn-link:hover i {
+    color: red;
 }
 .page-no {
     position: absolute;
