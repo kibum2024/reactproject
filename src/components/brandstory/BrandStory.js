@@ -10,20 +10,26 @@ const BrandStory = ({stateProp}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (location.pathname === `/brandstory/story`) {
+        if (location.pathname === `/brandstory` || location.pathname === `/brandstory/story`) {
           setMenuState(true);
         } else {
-          setMenuState(false);
-          navigate('/qna/contact');
+            setMenuState(false);
+            navigate('/qna/contact');
         }
-      }, [location.pathname]);
+      }, [location.pathname, navigate]);
   
     const storyClick = () => {
         setMenuState(true);
+        if (location.pathname !== '/brandstory/story') {
+            navigate('/brandstory/story');
+        }
     };
 
     const contactClick = () => {
         setMenuState(false);
+        if (location.pathname !== '/qna/contact') {
+            navigate('/qna/contact');
+        }    
     };
 
     return (

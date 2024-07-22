@@ -6,7 +6,7 @@ const ItemIntroduce = () => {
         <div className="item-introduce-wrap">
             <h1> PRODUCT </h1>
             <div className="item-introduce-img">
-                <img src="https://via.placeholder.com/1452x592" alt="Placeholder Image" />
+                <img src="https://via.placeholder.com/1452x592" alt="Descriptive text about the via" />
             </div>
         </div>
     )

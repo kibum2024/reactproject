@@ -5,7 +5,7 @@ const Stroy = () => {
     return (
         <div className='story-wrap'>
             <div className="story-img">
-                <img src="https://via.placeholder.com/1452x592" alt="Placeholder Image" />
+                <img src="https://via.placeholder.com/1452x592" alt="Descriptive text about the via" />
             </div>
             <p class="text-tit">브랜드의 가치를 높이는 선택, 어썸디</p>
             <p class="text-box">
