@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import ImgScroll from 'src/components/common/ImgScroll';
 import { itemData, itemInColor, itemInSize } from 'src/components/data/itemData';
 import * as img from 'src/components/img/index';
@@ -8,17 +8,10 @@ const ItemOrder = ({ itemNoProp }) => {
     const [colorSelected, setColorSelected] = useState(true);
     const [isColor, setIsColor] = useState(null);
     const [selectedItems, setSelectedItems] = useState([]);
-    const imgRef = useRef(null);
-    const imgZoomRef = useRef(null);
-    const imgZoomViewRef = useRef(null);
 
     const newItemData = itemData.filter(item => item.itemNo === Number(itemNoProp));
     const newItemInColor = itemInColor.filter(itemColor => itemColor.itemNo === itemNoProp);
     const newItemInSize = itemInSize.filter(itemSize => itemSize.itemNo === itemNoProp);
-    console.log("itemNoProp :", itemNoProp);
-    console.log("itemData :", itemData);
-    console.log("newItem :", newItemData);
-    console.log("img :", img[`image${newItemData[0].itemImg.substring(0, 3)}`]);
 
     const coloerClick = (setColor) => {
         setColorSelected(false);
@@ -93,86 +86,101 @@ const ItemOrder = ({ itemNoProp }) => {
     };
 
     // 줌 시작
-    // const zoomArea = document.getElementById('zoomArea');
-    // const zoomedImage = document.getElementById('zoomedImage');
+    const zoomFactor = 3;
+    const imgRef = useRef(null);
+    const imgZoomRef = useRef(null);
+    const imgZoomViewRef = useRef(null);
+    const rafIdRef = useRef(null); 
+    const isMouseOverRef = useRef(false);
+    const lastX = useRef(0);
+    const lastY = useRef(0); 
 
-    let zoomFactor = 3;
-    let isMouseOver = false;
-    let lastX = 0, lastY = 0;
-    let rafId = null;
+    const initializeZoom = () => {
+        imgZoomViewRef.current.style.backgroundImage = `url(${imgRef.current.src})`;
+        imgZoomViewRef.current.style.backgroundSize = `${imgRef.current.width * zoomFactor}px ${imgRef.current.height * zoomFactor}px`;
 
-    function initializeZoom() {
-        imgZoomViewRef.style.backgroundImage = `url(${imgRef.current.src})`;
-        imgZoomViewRef.style.backgroundSize = `${imgRef.current.width * zoomFactor}px ${imgRef.current.height * zoomFactor}px`;
-
-        // zoomArea 크기 설정
         imgZoomRef.current.style.width = `${imgRef.current.width / zoomFactor}px`;
         imgZoomRef.current.style.height = `${imgRef.current.height / zoomFactor}px`;
 
-        // selectedItemImg에 position: relative 추가
         imgRef.current.style.position = 'relative';
-
-        // zoomArea에 position: absolute 추가
         imgZoomRef.current.style.position = 'absolute';
-        imgZoomRef.current.style.pointerEvents = 'none';  // 마우스 이벤트 무시
-    }
+        imgZoomRef.current.style.pointerEvents = 'none';
+    };
 
-    imgRef.current.addEventListener('mouseenter', function (e) {
-        isMouseOver = true;
-        imgZoomRef.current.style.display = 'block';
-        imgZoomViewRef.style.display = 'block';
-        updateZoomArea(e);
-    });
-
-    imgRef.current.addEventListener('mousemove', updateZoomArea);
-
-    imgRef.current.addEventListener('mouseleave', function (e) {
-        isMouseOver = false;
-        imgZoomRef.current.style.display = 'none';
-        imgZoomViewRef.style.display = 'none';
-        if (rafId) {
-            cancelAnimationFrame(rafId);
-            rafId = null;
-        }
-    });
-
-    function updateZoomArea(e) {
-        const rect = imgRef.current.getBoundingClientRect();
-        lastX = e.clientX - rect.left;
-        lastY = e.clientY - rect.top;
-        if (!rafId) {
-            rafId = requestAnimationFrame(moveZoomArea);
-        }
-    }
-
-    function moveZoomArea() {
-        rafId = null;
-        if (!isMouseOver) return;
-
+    const moveZoomArea = useCallback(() => {
+        rafIdRef.current = null;
+        if (!isMouseOverRef.current) return;
+    
         const zoomAreaWidth = imgZoomRef.current.offsetWidth;
         const zoomAreaHeight = imgZoomRef.current.offsetHeight;
-
-        let x = Math.max(0, Math.min(lastX - zoomAreaWidth / 2, imgRef.current.offsetWidth - zoomAreaWidth));
-        let y = Math.max(0, Math.min(lastY - zoomAreaHeight / 2, imgRef.current.offsetHeight - zoomAreaHeight));
-
-        imgZoomRef.current.style.left = x + 'px';
-        imgZoomRef.current.style.top = y + 'px';
+    
+        let x = lastX.current - zoomAreaWidth / 2;
+        let y = lastY.current - zoomAreaHeight / 2;
+    
+        // 이미지 영역을 벗어나지 않도록 x와 y 좌표 제한
+        x = Math.max(0, Math.min(x, imgRef.current.offsetWidth - zoomAreaWidth));
+        y = Math.max(0, Math.min(y, imgRef.current.offsetHeight - zoomAreaHeight));
+    
+        imgZoomRef.current.style.left = `${x + 80}px`;
+        imgZoomRef.current.style.top = `${y}px`;
         imgZoomRef.current.style.display = 'block';
-
+    
         const zoomedX = -(x * zoomFactor);
         const zoomedY = -(y * zoomFactor);
+    
+        imgZoomViewRef.current.style.backgroundPosition = `${zoomedX}px ${zoomedY}px`;
+    
+        rafIdRef.current = requestAnimationFrame(moveZoomArea);
+    }, []); 
 
-        imgZoomViewRef.style.backgroundPosition = `${zoomedX}px ${zoomedY}px`;
+    useEffect(() => {
+        const img = imgRef.current;
 
-        rafId = requestAnimationFrame(moveZoomArea);
-    }
+        const updateZoomArea = (e) => {
+            const rect = imgRef.current.getBoundingClientRect();
+            lastX.current = e.clientX - rect.left;
+            lastY.current = e.clientY - rect.top;
+            if (!rafIdRef.current) {
+                rafIdRef.current = requestAnimationFrame(moveZoomArea);
+            }
+        };
 
-    if (imgRef.current.complete) {
-        initializeZoom();
-    } else {
-        imgRef.current.addEventListener('load', initializeZoom);
-    };
-    // 줌 끝
+        const handleMouseEnter = (e) => {
+            isMouseOverRef.current = true;
+            imgZoomRef.current.style.display = 'block';
+            imgZoomViewRef.current.style.display = 'block';
+            updateZoomArea(e);
+        };
+
+        const handleMouseMove = updateZoomArea;
+
+        const handleMouseLeave = (e) => {
+            isMouseOverRef.current = false;
+            imgZoomRef.current.style.display = 'none';
+            imgZoomViewRef.current.style.display = 'none';
+            if (rafIdRef.current) {
+                cancelAnimationFrame(rafIdRef.current);
+                rafIdRef.current = null;
+            }
+        };
+
+        if (img.complete) {
+            initializeZoom();
+        } else {
+            img.addEventListener('load', initializeZoom);
+        }
+
+        img.addEventListener('mouseenter', handleMouseEnter);
+        img.addEventListener('mousemove', handleMouseMove);
+        img.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+            img.removeEventListener('mouseenter', handleMouseEnter);
+            img.removeEventListener('mousemove', handleMouseMove);
+            img.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, [moveZoomArea]);
+     // 줌 끝
 
     return (
         <div className='item-order-wrap'>
