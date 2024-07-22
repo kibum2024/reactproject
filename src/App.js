@@ -116,7 +116,7 @@ function App() {
       </div>
       <div className='container-wrap'>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} ></Route>
+          <Route path="/reactproject" element={<Navigate to="/home" />} ></Route>
           <Route path="/home" element={<MainContent />} ></Route> 
           <Route path="/brandstory" element={<BrandStory stateProp ={true}/>} >
             <Route path="story" element={<Story />} />
