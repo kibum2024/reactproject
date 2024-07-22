@@ -1,10 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-function Shopping() {
+function Shopping({onImageClick}) {
   return (
   <div>
-    <Outlet />
+     <Outlet context={{ onImageClick }} />
   </div>
   );
 }

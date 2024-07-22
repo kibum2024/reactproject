@@ -83,8 +83,6 @@ const ShoppingCart = ({imgProp, itemNoProp}) => {
     const calculateTotalAmt = () => {
         return selectedItems.reduce((total, item) => total + item.itemCount * item.itemAmt, 0);
     };
-    // console.log("selectedItems :", selectedItems);
-    // console.log("newItemInSize :", newItemInSize);
 
     return (
         <div className='shopping-cart-wrap'>

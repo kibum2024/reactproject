@@ -8,7 +8,7 @@ import ShoppingCart from './ShoppingCart';
 Modal.setAppElement('#root');
 
 
-const NewItem = ({callMenuProg}) => {
+const NewItem = ({callMenuProg, onImageClick}) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedNo, setSelectedNo] = useState(null);
@@ -61,8 +61,8 @@ const NewItem = ({callMenuProg}) => {
                             {newBestItem.map((item, index) => (
                                 <div key={index} className='best-item'>
                                     <div className='best-item-img'>
-                                        <img src={img[`image${item.itemImg.substring(0,3)}`]} alt="" />
-                                        <div className='best-item-info'>
+                                        <img src={img[`image${item.itemImg.substring(0,3)}`]} alt=""/>
+                                        <div className='best-item-info' onClick={() => onImageClick(item.itemNo)}>
                                             <p className='best-item-ranking'> {"BEST"+item.ranking} </p>
                                             <p className='best-item-discountRate'> {item.discountRate} </p>
                                             <p className='best-item-name'> {item.itemName} </p>
@@ -93,7 +93,7 @@ const NewItem = ({callMenuProg}) => {
             <div className='new-item-grid'>
                 {itemsSort.map((item, index) => (
                     <div key={index} className='new-item'>
-                        <img src={img[`image${item.itemImg.substring(0,3)}`]} alt="" />
+                        <img src={img[`image${item.itemImg.substring(0,3)}`]} alt="" onClick={() => onImageClick(item.itemNo)}/>
                         <p className='new-item-name'> {item.itemName} </p>
                         <p className='new-item-comment'> {item.itemComment} </p>
                         <span className='new-item-originalPrice'><del>{item.originalPrice.toLocaleString()}</del>원</span><span className='new-item-discountPrice'> {item.discountPrice.toLocaleString()}원</span><span className='new-item-discountRate'> {item.discountRate} </span>

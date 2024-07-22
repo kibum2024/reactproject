@@ -97,6 +97,7 @@
     width: 350px;
     height: 350px;
     border-radius: 20px;
+    cursor: pointer;
 }
 .shopping-cart {
     position: absolute;

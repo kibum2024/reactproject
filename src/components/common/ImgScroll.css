@@ -1,38 +1,40 @@
 /* /* ImgScroll.css */
-* {
-    margin: 0 auto;
-    padding: 0;
-    font-size: 14px;
+.slider-container-wrap {
+    width: 1460px;
+    height: 500px;
+    margin: 100px auto;
 }
 .slider-container {
     position: relative;
     overflow: hidden;
-    width: 1060px;
-    height: 260px;
+    width: 1460px;
+    height: 400px;
+    margin: 0px auto;
 }
 .item-list {
     position: absolute;
     display: flex;
     flex-wrap: nowrap;
     width: auto;
-    height: 260px;
+    height: 300px;
     left: 0px;
+    padding-left: 10px;
 }
 
 .item-list > li {
-    flex: 0 0 190px;
+    flex: 0 0 272px;
     margin: 0px 10px;
     transition: transform 1s ease;
 }
 
 .item-content img {
-    width: 190px;
-    height: 200px;
+    width: 272px;
+    height: 272px;
 }
 .item-comment {
-    width: 190px;
+    width: 272px;
     height: 15px;
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
     color: #555454;
     overflow: hidden;
@@ -42,7 +44,10 @@
     text-align: center;
 }
 .discount-price {
+    font-size: 18px;
     text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }
 .control-container {
     display: flex;

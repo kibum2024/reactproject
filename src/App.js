@@ -1,21 +1,22 @@
-import React, { useState, useRef } from 'react';
-import { Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom';
-import './App.css';
-import { submenuData } from './components/data/submenuData';
-import DropdownMenu from './components/DropdownMenu';
-import MainContent  from './components/home/MainContent';
-import BrandStory  from './components/brandstory/BrandStory';
-import Story  from './components/brandstory/Story';
-import Contact  from './components/brandstory/Contact';
-import ItemIntroduce  from './components/item/ItemIntroduce';
-import Shopping  from './components/shopping/Shopping';
+import React, { useState, useRef, useEffect } from 'react';
+import { Routes, Route, Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import 'src/App.css';
+import { submenuData } from 'src/components/data/submenuData';
+import DropdownMenu from 'src/components/DropdownMenu';
+import MainContent  from 'src/components/home/MainContent';
+import BrandStory  from 'src/components/brandstory/BrandStory';
+import Story  from 'src/components/brandstory/Story';
+import Contact  from 'src/components/brandstory/Contact';
+import ItemIntroduce  from 'src/components/item/ItemIntroduce';
+import Shopping  from 'src/components/shopping/Shopping';
 import ShoppingNewItem from 'src/components/shopping/ShoppingNewItem';
-import BestItem from './components/shopping/BestItem';
-import YogurtItem from './components/shopping/YogurtItem';
-import CerealItem from './components/shopping/CerealItem';
-import YogurtCerealItem from './components/shopping/YogurtCerealItem';
-import FooterDisplay from "./components/FooterDisplay";
-import TopDownBtn from './components/TopDownBtn';
+import BestItem from 'src/components/shopping/BestItem';
+import YogurtItem from 'src/components/shopping/YogurtItem';
+import CerealItem from 'src/components/shopping/CerealItem';
+import YogurtCerealItem from 'src/components/shopping/YogurtCerealItem';
+import FooterDisplay from "src/components/FooterDisplay";
+import TopDownBtn from 'src/components/TopDownBtn';
+import ItemOrder from 'src/components/common/ItemOrder';
 
 
 function App() {
@@ -24,10 +25,17 @@ function App() {
   const [subMenus, setSubMenus] = useState([]);
   const [mouseRect, setMouseRect] = useState(null);
   const timeoutRef = useRef(null);
-  const navigate = useNavigate();
+  const homeNavigate = useNavigate();
+  const itemOrderNavigate = useNavigate();
+  const location = useLocation(); // useLocation 훅으로 현재 경로를 가져옵니다.
+  const [selectedItemNo, setSelectedItemNo] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const logoClick = () => {
-    navigate('/home');
+    homeNavigate('/home');
   };
 
   const menuMouseEnter = (items, event) => {
@@ -50,6 +58,11 @@ function App() {
 
   const handleDropdownMouseLeave = () => {
     setShowDropdown(false);
+  };
+
+  const handleImageClick = (itemNo) => {
+    setSelectedItemNo(itemNo);
+    itemOrderNavigate('/item-order');
   };
 
   return (
@@ -110,17 +123,18 @@ function App() {
             <Route path="contact" element={<Contact />} />
           </Route>
           <Route path="/item" element={<ItemIntroduce />} ></Route>
-          <Route path="/shopping" element={<Shopping />}>
-            <Route path="ShoppingNewItem" element={<ShoppingNewItem />} ></Route>
-            <Route path="BestItem" element={<BestItem />} ></Route>
-            <Route path="YogurtItem" element={<YogurtItem />} ></Route>
-            <Route path="CerealItem" element={<CerealItem />} ></Route>
-            <Route path="YogurtCerealItem" element={<YogurtCerealItem />} ></Route>
+          <Route path="/shopping" element={<Shopping onImageClick={handleImageClick}/>}>
+            <Route path="ShoppingNewItem" element={<ShoppingNewItem onImageClick={handleImageClick}/>}></Route>
+            <Route path="BestItem" element={<BestItem onImageClick={handleImageClick}/>}></Route>
+            <Route path="YogurtItem" element={<YogurtItem onImageClick={handleImageClick}/>} ></Route>
+            <Route path="CerealItem" element={<CerealItem onImageClick={handleImageClick}/>} ></Route>
+            <Route path="YogurtCerealItem" element={<YogurtCerealItem onImageClick={handleImageClick}/>} ></Route>
           </Route>
           <Route path="/qna" element={<BrandStory stateProp ={false}/>} >
             <Route path="story" element={<Story />} />
             <Route path="contact" element={<Contact />} />
           </Route>
+          <Route path="/item-order" element={<ItemOrder  itemNoProp={selectedItemNo} />} />
         </Routes>
       </div>
       <div className='footer-wrap'>
