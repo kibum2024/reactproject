@@ -13,7 +13,7 @@ const DropdownMenu = ({ items, mouseRect, onMouseEnter = () => {}, onMouseLeave 
 
   const style = {
     position: 'absolute',
-    left: mouseRect ? `${mouseRect.left - 15}px` : 0,
+    left: mouseRect ? `${mouseRect.left -230}px` : 0,
     top: mouseRect ? `${mouseRect.bottom}px` : 0,
   };
 

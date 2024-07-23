@@ -121,7 +121,8 @@ const ItemOrder = ({ itemNoProp }) => {
         x = Math.max(0, Math.min(x, imgRef.current.offsetWidth - zoomAreaWidth));
         y = Math.max(0, Math.min(y, imgRef.current.offsetHeight - zoomAreaHeight));
     
-        imgZoomRef.current.style.left = `${x + 80}px`;
+        // imgZoomRef.current.style.left = `${x + 80}px`;
+        imgZoomRef.current.style.left = `${x + 274}px`;
         imgZoomRef.current.style.top = `${y}px`;
         imgZoomRef.current.style.display = 'block';
     
