@@ -1,5 +1,5 @@
 import React from "react";
-import './ItemIntroduce.css';
+import 'src/components/item/ItemIntroduce.css';
 
 const ItemIntroduce = () => {
     return (

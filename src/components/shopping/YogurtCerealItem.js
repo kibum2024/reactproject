@@ -1,7 +1,7 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import NewItem from 'src/components/home/NewItem';
-import './YogurtCerealItem.css';
+import 'src/components/shopping/YogurtCerealItem.css';
 
 function YogurtCerealItem() {
   const { onImageClick } = useOutletContext();

@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 // import PropTypes from 'prop-types';
 import './Header.css';
-import * as img from './img/index';
-import ColorClick from "./ColorClick";
+import * as img from '../components/img/index';
+import ColorClick from "../components/ColorClick";
 
 const HeaderUp = ({ itemData }) => {
     const [showClickData, setShowClickData] = useState([]);

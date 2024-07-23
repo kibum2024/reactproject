@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import 'src/components/brandstory/BrandStory.css';
-import Story from "./Story";
-import Contact from "./Contact";
+import Story from "src/components/brandstory/Story";
+import Contact from "src/components/brandstory/Contact";
 
 const BrandStory = ({stateProp}) => {
     const [menuState, setMenuState] = useState(stateProp);

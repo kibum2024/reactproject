@@ -1,5 +1,5 @@
 import React from 'react';
-import './Contact.css';
+import 'src/components/brandstory/Contact.css';
 
 const Contact = () => {
     return (

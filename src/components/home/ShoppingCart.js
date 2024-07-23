@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import * as img from '../img/index';
+import * as img from 'src/components/img/index';
 import { itemData, itemInColor, itemInSize } from 'src/components/data/itemData';
-import './ShoppingCart.css';
+import 'src/components/home/ShoppingCart.css';
 
 const ShoppingCart = ({imgProp, itemNoProp}) => {
     const [colorSelected, setColorSelected] = useState(true);

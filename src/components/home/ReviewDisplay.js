@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import * as img from '../img/index';
-import { reviewData, itemData } from '../data/itemData';
-import './ReviewDisplay.css';
+import * as img from 'src/components/img/index';
+import { reviewData, itemData } from 'src/components/data/itemData';
+import 'src/components/home/ReviewDisplay.css';
 
 const ReviewDisplay = () => {
     const [leftPosition, setLeftPosition] = useState(0);

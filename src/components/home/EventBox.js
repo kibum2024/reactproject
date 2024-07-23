@@ -1,6 +1,6 @@
 import React from "react";
 import * as img from 'src/components/img/index';
-import './EventBox.css';
+import 'src/components/home/EventBox.css';
 
 const EventBox = () => {
     const images = [

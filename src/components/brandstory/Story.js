@@ -1,5 +1,5 @@
 import React from 'react';
-import './Story.css';
+import 'src/components/brandstory/Story.css';
 
 const Stroy = () => {
     return (

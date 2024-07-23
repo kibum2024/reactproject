@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Routes, Route, Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import 'src/App.css';
 import { submenuData } from 'src/components/data/submenuData';
-import DropdownMenu from 'src/components/DropdownMenu';
+import DropdownMenu from 'src/components/main/DropdownMenu';
 import MainContent  from 'src/components/home/MainContent';
 import BrandStory  from 'src/components/brandstory/BrandStory';
 import Story  from 'src/components/brandstory/Story';
@@ -14,8 +14,8 @@ import BestItem from 'src/components/shopping/BestItem';
 import YogurtItem from 'src/components/shopping/YogurtItem';
 import CerealItem from 'src/components/shopping/CerealItem';
 import YogurtCerealItem from 'src/components/shopping/YogurtCerealItem';
-import FooterDisplay from "src/components/FooterDisplay";
-import TopDownBtn from 'src/components/TopDownBtn';
+import FooterDisplay from "src/components/main/FooterDisplay";
+import TopDownBtn from 'src/components/main/TopDownBtn';
 import ItemOrder from 'src/components/common/ItemOrder';
 
 

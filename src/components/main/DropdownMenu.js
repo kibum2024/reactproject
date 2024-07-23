@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './DropdownMenu.css';
+import 'src/components/main/DropdownMenu.css';
 
 const DropdownMenu = ({ items, mouseRect, onMouseEnter = () => {}, onMouseLeave = () => {} }) => {    
   const navigate = useNavigate();

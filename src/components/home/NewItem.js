@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import * as img from 'src/components/img/index';
 import { itemData, itemInColor, bestItem } from "src/components/data/itemData";
-import './NewItem.css';
+import 'src/components/home/NewItem.css';
 import ShoppingCart from './ShoppingCart';
 
 Modal.setAppElement('#root');

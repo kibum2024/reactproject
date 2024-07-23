@@ -1,5 +1,5 @@
 import React from 'react';
-import './VideoDisplay.css';
+import 'src/components/home/VideoDisplay.css';
 
 const VideoDisplay = () => {
     return (

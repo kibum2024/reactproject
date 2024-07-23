@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './TopDownBtn.css';
+import 'src/components/main/TopDownBtn.css';
 
 const TopDownBtn = () => {
     const rightBoxRef = useRef(null);

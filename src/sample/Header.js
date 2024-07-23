@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Header.css';
-import * as img from './img/index';
-import ColorClick from "./ColorClick";
+import * as img from '../components/img/index';
+import ColorClick from "../components/ColorClick";
 
 function Header(props) {
     const { itemData } = props;
